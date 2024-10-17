@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{.Title}}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            color: #333;
+            background-color: #f9f9f9;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1 {
+            color: #007BFF;
+            margin-bottom: 10px;
+        }
+        .summary {
+            max-width: 800px; 
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+            width: 100%;
+        }
+        .summary p {
+            margin: 10px 0;
+        }
+        a {
+            text-decoration: none;
+            color: #007BFF;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>{{.Title}}</h1>
+    
+    <div class="summary">
+        <h2>Email Summary</h2>
+        <p><strong>Recipient:</strong> {{.Recipient}}</p>
+        <p><strong>Subject:</strong> {{.Title}}</p>
+        <p><strong>Body:</strong></p>
+        <p>{{printf "%s" .Body}}</p>
+    </div>
+
+    <p>[<a href="/edit/">Edit</a>]</p>
+</body>
+</html>
+
